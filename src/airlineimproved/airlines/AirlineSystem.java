@@ -11,10 +11,8 @@ package airlineimproved.airlines;
  */
 public class AirlineSystem {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+
+    public static void main() {
       //  AirlineGui AG = new AirlineGui();
         AirSystem AS = new AirSystem();
     }

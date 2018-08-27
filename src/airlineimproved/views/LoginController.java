@@ -5,8 +5,7 @@
  */
 package airlineimproved.views;
 
-import airlineimproved.Main;
-import static airlineimproved.Main.main;
+import static airlineimproved.views.Main.main;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

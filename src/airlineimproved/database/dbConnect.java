@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class dbConnect {
     
     private ClientDataSource ds;
-    
+    private Connection conn;
     public dbConnect(){
         ds = new ClientDataSource();
         ds.setDatabaseName("airline");
@@ -35,26 +35,37 @@ public class dbConnect {
     
     private void Connect(){
         try {
-            Connection conn = ds.getConnection();
+            conn = ds.getConnection();
         } catch (SQLException ex) {
             System.out.println("Unable To connect");
         }
     }
     
     
-    private void createUser(){
+    private void createUser(String entry){
+       String query = entry;
+       this.Connect();
+       try{
+           Statement s = this.getConn().createStatement();
+           s.execute(query);
+       }
+       catch(Exception e){
+           e.printStackTrace();
+       }
+    }
+    
+    private void deleteUser(String query){
     
     }
     
-    private void deleteUser(){
+    private void getFlights(String query){
     
     }
     
-    private void getFlights(){
+    private void createFlight(String query){
     
     }
-    
-    private void creaeFlight(){
-    
+    private Connection getConn(){
+        return this.conn;
     }
 }
