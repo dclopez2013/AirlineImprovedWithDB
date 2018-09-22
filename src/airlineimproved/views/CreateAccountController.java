@@ -11,6 +11,8 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -25,6 +27,29 @@ public class CreateAccountController{
     @FXML
     private Button home;
     
+    @FXML
+    private Button clearText;
+    
+    @FXML
+    private TextField firstName;
+    
+    @FXML
+    private TextField lastName;
+    
+    @FXML
+    private TextField userName;
+    
+    @FXML
+    private TextField email;
+    
+    @FXML
+    private TextField emailConfirm;
+    
+    @FXML
+    private PasswordField password;
+    
+    @FXML
+    private PasswordField passwordConfirm;
     
     @FXML
     private void goHome() throws IOException{

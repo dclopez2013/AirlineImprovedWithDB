@@ -31,7 +31,7 @@ public class LoginController{
     }
     
     @FXML
-    public void login(){
+    public void login() throws IOException{
         main.login();
     }
  

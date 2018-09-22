@@ -60,8 +60,12 @@ public class Main extends Application {
         showLogin();
     }
     
-    public static void login(){
+    public static void login() throws IOException{
         System.out.println("logged in");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("MainApp.fxml"));
+        BorderPane mainPage = loader.load();
+        mainLayout.setCenter(mainPage);
     }
     /**
      * @param args the command line arguments
