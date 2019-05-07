@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -11,33 +16,101 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlineimproved.views.LoginController">
    <left>
-      <ImageView fitHeight="478.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+      <ImageView fitHeight="478.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../pics/loginlogo2.jpg" />
+         </image></ImageView>
    </left>
    <right>
-      <ImageView fitHeight="477.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+      <ImageView fitHeight="477.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../pics/flightlogo.png" />
+         </image></ImageView>
    </right>
    <top>
-      <Pane prefHeight="62.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="122.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="93.0" fitWidth="350.0" layoutX="285.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../pics/loginLogo.jpg" />
+               </image>
+            </ImageView>
+         </children></Pane>
    </top>
    <bottom>
       <Pane prefHeight="52.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Text layoutX="135.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To the JavaFX Airline System" wrappingWidth="332.13671875">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text layoutX="200.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please login to continue" wrappingWidth="143.13671875" />
-            <TextField layoutX="197.0" layoutY="280.0" />
-            <Text layoutX="78.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username" />
-            <Text layoutX="78.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <PasswordField layoutX="197.0" layoutY="358.0" />
-            <Button fx:id="login" layoutX="200.0" layoutY="413.0" mnemonicParsing="false" onAction="#login" text="Login" />
-            <Button layoutX="275.0" layoutY="413.0" mnemonicParsing="false" onAction="#gotoCreateAccount" text="Create Account" />
-         </children>
-      </Pane>
+      <TabPane BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab closable="false" text="Login">
+               <content>
+                  <Pane prefHeight="459.0" prefWidth="470.0">
+                     <children>
+                        <Text layoutX="199.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please login to continue" wrappingWidth="143.13671875">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="userName" layoutX="197.0" layoutY="186.0" promptText="Username" />
+                        <Text layoutX="90.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="91.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Text>
+                        <PasswordField fx:id="pass" layoutX="196.0" layoutY="244.0" promptText="password" />
+                        <Button fx:id="login" layoutX="151.0" layoutY="337.0" mnemonicParsing="false" onAction="#login" text="Login">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="createAccount" layoutX="270.0" layoutY="337.0" mnemonicParsing="false" onAction="#gotoCreateAccount" text="Create Account">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="119.0" fitWidth="429.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../pics/loginLogo4.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Admin Tab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="85.0" fitWidth="446.0" layoutX="12.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../pics/adminLogo3.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="cancel" layoutX="195.0" layoutY="332.0" mnemonicParsing="false" onAction="#adminClear" text="Cancel" />
+                        <Button fx:id="loginAdmin" layoutX="312.0" layoutY="332.0" mnemonicParsing="false" onAction="#adminLogin" text="Login" />
+                        <Label layoutX="67.0" layoutY="129.0" prefHeight="38.0" prefWidth="128.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="67.0" layoutY="209.0" prefHeight="38.0" prefWidth="128.0" text="Password">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="passAdmin" layoutX="245.0" layoutY="216.0" promptText="password" />
+                        <TextField fx:id="userNameAdmin" layoutX="245.0" layoutY="136.0" promptText="username" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
    </center>
 </BorderPane>

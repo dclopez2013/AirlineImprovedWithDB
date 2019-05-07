@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import airlineimproved.database.*;
+import java.sql.Connection;
 
 /**
  *
@@ -19,6 +21,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     private Stage primaryStage;
     private static BorderPane mainLayout;
+    private static databaseMain dbm;
     
     
     @Override
@@ -36,6 +39,7 @@ public class Main extends Application {
         mainLayout = loader.load();     
         Scene scene = new Scene(mainLayout); 
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
         showLogin();
         
@@ -56,13 +60,23 @@ public class Main extends Application {
         mainLayout.setCenter(login);
     }
     
+    
+    public static void showAdmin() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("admin.fxml"));
+        BorderPane admin = loader.load();
+        mainLayout.setCenter(admin);
+    }
+    
     public static void goHome() throws IOException{
         showLogin();
     }
     
-    public static void login() throws IOException{
+    public static void login(String uid) throws IOException{
         System.out.println("logged in");
         FXMLLoader loader = new FXMLLoader();
+        
+        
         loader.setLocation(Main.class.getResource("MainApp.fxml"));
         BorderPane mainPage = loader.load();
         mainLayout.setCenter(mainPage);
@@ -71,7 +85,13 @@ public class Main extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        dbm = new databaseMain();
+        dbm.Connect();
         launch(args);
+    }
+    
+    public static databaseMain getDBConnect(){
+        return dbm;
     }
     
 }

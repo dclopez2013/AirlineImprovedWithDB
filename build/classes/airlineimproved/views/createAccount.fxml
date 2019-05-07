@@ -4,6 +4,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -12,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlineimproved.views.CreateAccountController">
    <center>
-      <Pane prefHeight="105.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="450.0" prefWidth="334.0" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="53.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
             <Text layoutX="53.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
@@ -21,16 +22,16 @@
             <Text layoutX="54.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cofirm Email" />
             <Text layoutX="53.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <Text layoutX="53.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
-            <Button layoutX="110.0" layoutY="383.0" mnemonicParsing="false" text="Submit" />
-            <Button layoutX="244.0" layoutY="383.0" mnemonicParsing="false" text="Clear Text" />
-            <CheckBox layoutX="115.0" layoutY="341.0" mnemonicParsing="false" text="&quot;I AGREE TO THE TERMS AND CONDITIONS&quot;" />
-            <TextField layoutX="191.0" layoutY="20.0" />
-            <TextField layoutX="191.0" layoutY="60.0" />
-            <TextField layoutX="191.0" layoutY="100.0" />
-            <TextField layoutX="191.0" layoutY="147.0" />
-            <TextField layoutX="191.0" layoutY="186.0" />
-            <PasswordField layoutX="191.0" layoutY="247.0" />
-            <PasswordField layoutX="191.0" layoutY="281.0" />
+            <Button fx:id="submit" layoutX="110.0" layoutY="383.0" mnemonicParsing="false" onAction="#createUser" text="Submit" />
+            <Button fx:id="clearText" layoutX="244.0" layoutY="383.0" mnemonicParsing="false" onAction="#clearFields" text="Clear Text" />
+            <CheckBox fx:id="agree" layoutX="71.0" layoutY="343.0" mnemonicParsing="false" text="&quot;I AGREE TO THE TERMS AND CONDITIONS&quot;" />
+            <TextField fx:id="firstName" layoutX="191.0" layoutY="20.0" />
+            <TextField fx:id="lastName" layoutX="191.0" layoutY="60.0" />
+            <TextField fx:id="userName" layoutX="191.0" layoutY="100.0" />
+            <TextField fx:id="email" layoutX="191.0" layoutY="147.0" />
+            <TextField fx:id="emailConfirm" layoutX="191.0" layoutY="186.0" />
+            <PasswordField fx:id="password" layoutX="191.0" layoutY="247.0" />
+            <PasswordField fx:id="passwordConfirm" layoutX="191.0" layoutY="281.0" />
             <Button fx:id="home" layoutX="176.0" layoutY="448.0" mnemonicParsing="false" onAction="#goHome" text="Home" />
          </children>
       </Pane>
@@ -38,9 +39,9 @@
    <top>
       <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="272.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Your Account Here!" underline="true" wrappingWidth="241.13671875">
+            <Text layoutX="295.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Your Account Here!" underline="true" wrappingWidth="241.13671875">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
          </children>
@@ -50,9 +51,15 @@
       <Pane prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </bottom>
    <left>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+      <ImageView fitHeight="396.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../pics/airlineLogoTall.jpg" />
+         </image></ImageView>
    </left>
    <right>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+      <ImageView fitHeight="347.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../pics/islandLogo.jpg" />
+         </image></ImageView>
    </right>
 </BorderPane>

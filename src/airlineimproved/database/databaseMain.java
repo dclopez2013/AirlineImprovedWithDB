@@ -10,6 +10,5 @@ import java.sql.*;
  *
  * @author dclop
  */
-public class databaseMain {
-    
+public class databaseMain extends dbConnect{
 }
